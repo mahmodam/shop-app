@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { LinkContainer } from "react-router-bootstrap";
 //import { Container, Row, Col } from "react-bootstrap";
 
 const Header = () => {
@@ -11,7 +12,9 @@ const Header = () => {
     <header>
       <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container>
-          <Navbar.Brand href="/">Shop App</Navbar.Brand>
+          <LinkContainer to="/">
+            <Navbar.Brand>Shop App</Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Form className="d-flex">
             <Form.Control
@@ -28,13 +31,17 @@ const Header = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="/cart">
-                {" "}
-                <i className="fas fa-shopping-cart"></i> CART
-              </Nav.Link>
-              <Nav.Link href="/login">
-                <i className="fas fa-user"></i> Sing In
-              </Nav.Link>
+              <LinkContainer to="/cart">
+                <Nav.Link>
+                  {" "}
+                  <i className="fas fa-shopping-cart"></i> CART
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/login">
+                <Nav.Link>
+                  <i className="fas fa-user"></i> Sing In
+                </Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>
