@@ -1,0 +1,23 @@
+.form-group {
+  display: block;
+  margin: 1rem 0;
+  margin-bottom: 0.5rem;
+}
+
+.login-card {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 10%;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+  margin: 1rem 0;
+  text-align: center;
+  color: red;
+  border-color: red;
+  background: #ffd1d1;
+}
