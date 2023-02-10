@@ -12,7 +12,11 @@ import {
   USER_UPDATE_PROFILE_FAIL,
   USER_UPDATE_PROFILE_REQUEST,
   USER_UPDATE_PROFILE_SUCCESS,
+  USER_DETAILS_RESET,
 } from "./types";
+
+import { ORDER_LIST_MY_RESET } from "./types";
+
 import axios from "axios";
 
 const url = "http://localhost:5000";
@@ -82,6 +86,8 @@ export const register = (name, email, password) => async (dispatch) => {
 export const logout = () => (dispatch) => {
   localStorage.removeItem("userInfo");
   dispatch({ type: USER_LOGOUT });
+  dispatch({ type: USER_DETAILS_RESET });
+  dispatch({ type: ORDER_LIST_MY_RESET });
 };
 
 export const getUserDetails = (id) => async (dispatch, getState) => {
